@@ -5,6 +5,7 @@ from csv import DictReader
 import json
 from math import isclose
 from pathlib import Path
+from unicodedata import normalize
 from zipfile import ZIP_DEFLATED, ZipFile
 
 import nbformat
@@ -15,7 +16,9 @@ from PIL import Image, ImageDraw
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "outputs"
 NOTEBOOK = ROOT / "main.ipynb"
-PDF = ROOT / "ASBD_EndSem_Report.pdf"
+FINAL_PDF = ROOT / "ASBD_EndSem_Report.pdf"
+ANALYSIS_PDF = OUT / "ASBD_EndSem_Analysis_Summary.pdf"
+PDF = FINAL_PDF if FINAL_PDF.is_file() else ANALYSIS_PDF
 RENDER = ROOT / "screenshots" / "report_review"
 AUDIT = ROOT / "FINAL_AUDIT.md"
 ARCHIVE = ROOT / "ASBD_EndSem_Submission.zip"
@@ -26,7 +29,7 @@ def read_json(name):
 def render_and_check():
     RENDER.mkdir(parents=True, exist_ok=True)
     with fitz.open(PDF) as document:
-        assert len(document) == 11
+        assert len(document) == (23 if PDF == FINAL_PDF else 11)
         sheet = Image.new("RGB", (1280, ((len(document)+3)//4)*468), "#e7edf2")
         draw = ImageDraw.Draw(sheet)
         images = 0
@@ -185,7 +188,7 @@ def package():
         assert isclose(row.difference_pp, readable_pct - full_pct, rel_tol=0, abs_tol=5.1e-9)
     largest_gap = mix.loc[mix.difference_pp.abs().idxmax()]
 
-    with fitz.open(PDF) as document:
+    with fitz.open(ANALYSIS_PDF) as document:
         limitations_page = " ".join(document[10].get_text().split())
         report = " ".join(" ".join(page.get_text().split()) for page in document)
         pages = len(document)
@@ -198,6 +201,33 @@ def package():
     for row in summary.itertuples():
         values = f"{row.algorithm} {row.documents:,} {row.local_seconds:.4f} {row.spark_seconds:.4f} {row.speedup:.4f}x"
         assert values in benchmark_page, values
+    if PDF == FINAL_PDF:
+        with fitz.open(FINAL_PDF) as detailed:
+            pages = len(detailed)
+            assert pages == 23
+            assert sum(len(page.get_image_info()) for page in detailed) == 13
+            links = {link.get("uri") for link in detailed[0].get_links()}
+            assert "https://github.com/thenithin342/supreme-court-judgment-analytics" in links
+            assert "https://www.kaggle.com/datasets/vangap/indian-supreme-court-judgments" in links
+            detail = " ".join(
+                " ".join(normalize("NFKC", page.get_text()).split()) for page in detailed
+            ).replace("−", "-")
+        for row in mix.head(3).itertuples():
+            values = (
+                f"{row.case_category} {row.full_count:,} {row.readable_count:,} "
+                f"{row.full_pct:.2f} {row.readable_pct:.2f} {row.difference_pp:+.2f}"
+            )
+            assert values in detail, values
+        for row in summary.itertuples():
+            values = (
+                f"{row.algorithm} {row.documents:,} {row.local_seconds:.4f} "
+                f"{row.spark_seconds:.4f} {row.speedup:.4f}×"
+            )
+            assert values in detail, values
+        for value in (f"{meta['rows']:,}", f"{fp['transactions']:,}", f"{fp['items']:,}",
+                      f"{fp['rules']:,}", f"{best.silhouette:.3f}", str(tax_cluster.medoid_diary_no)):
+            assert value in detail, value
+
     extension_text = ""
     if (OUT / "spark_extended_summary.json").is_file():
         extension = read_json("spark_extended_summary.json")
@@ -228,6 +258,12 @@ def package():
             assert isclose(row.spark_seconds, runs.spark_seconds.median())
             assert isclose(row.speedup, row.local_seconds / row.spark_seconds)
             assert f"{row.algorithm} {row.local_seconds:.4f} {row.spark_seconds:.4f} {row.speedup:.4f}x" in benchmark_page
+            if PDF == FINAL_PDF:
+                values = (
+                    f"{row.algorithm} {row.local_seconds:.4f} {row.spark_seconds:.4f} "
+                    f"{row.spark_prepare_seconds:.4f} {row.speedup:.4f}×"
+                )
+                assert values in detail, values
         extension_text = (
             f"- The larger workload added {len(added):,} readable PDFs from {len(extra_sample):,} newly sampled filenames. "
             f"All {len(extended_runs)} paired runs matched across {len(extended_tx):,} baskets. "
@@ -242,6 +278,10 @@ def package():
     for result in evidence["workloads"]:
         values = " ".join(str(result[key]) for key in ("frequent", "closed", "nonclosed"))
         assert f"{result['documents']:,} {values} {result['reduction']:.2%}" in report
+        if PDF == FINAL_PDF:
+            assert f"{result['documents']:,} {values} {result['reduction']:.2%}" in detail
+    if PDF == FINAL_PDF:
+        assert f"{example['support_count']}/{example['documents']} = {example['support']:.1%}" in detail
     assert f"{example['support_count']} documents ({example['support']:.1%} support)" in report
     assert f"{tax_cluster.medoid_diary_no} (CSV row {tax_cluster.medoid_record:,})" in report
     assert f"silhouette of {best.silhouette:.3f} indicates weak separation" in report
@@ -256,6 +296,8 @@ def package():
         assert isclose(row.rule_confidence, joint / counts[left])
         assert isclose(row.rule_lift, row.rule_confidence * len(baskets) / counts[right])
         assert f"{support:.1%} gives {row.frequent_itemsets} itemsets and {row.rules} rules" in report
+        if PDF == FINAL_PDF:
+            assert f"{support:.1%} {row.frequent_itemsets} {row.rules} {row.max_itemset_length}" in detail
     for value in (f'{meta["rows"]:,}', f'{extraction["readable"]:,}', f'{fp["items"]:,}',
                   f'{closure["closed"]:,}', f'{cluster["silhouette"]:.3f}',
                   "FP-Growth", "A-Close", "K-Medoids", "Local and PySpark benchmarks",
@@ -287,10 +329,10 @@ def package():
 
 ## Final submission verification
 
-- The README evidence guide links all eleven requirements and checks to report pages, notebook sections and bundled files. The supplemental FP-Growth sweep holds the 3,843 transactions, including 501 empty baskets, and the confidence and lift filters fixed. Its 2% run reproduced the original itemsets and rules, including their metrics. The sweep is recorded in `outputs/fp_support_sensitivity.csv` and summarized on page 7.
-- The final notebook cell was re-executed from saved inputs. An independent record-ID lookup verified the exact {len(readable):,} original mining PDFs against {len(records):,} metadata records, including every category count and percentage. The largest difference was {largest_gap.case_category} ({largest_gap.difference_pp:+.2f} percentage points). Page 11 and `outputs/sample_representativeness.csv` document the comparison. Prior notebook cells, mining outputs, and benchmark measurements were preserved.
-- Page 10 now uses ASCII `x` for speedup ratios in the table and caption. The text layer contains all four benchmark rows at the precision shown and has no replacement glyphs. Visual inspection covered all 11 pages and all 13 figures.
-- A-Close and report cells were executed from saved inputs. Six other executed cells were preserved, including K-Medoids and both Spark tests. All ten descriptive inferences appear in the report, and the benchmark table matches the two raw repetitions per workload and algorithm.
+- The README links to the notebook, source stages and result tables. The supplemental FP-Growth sweep holds the 3,843 transactions, including 501 empty baskets, and the confidence and lift filters fixed. Its 2% run reproduced the original itemsets and rules, including their metrics. The sweep is recorded in `outputs/fp_support_sensitivity.csv` and summarized in the report.
+- The final notebook cell was re-executed from saved inputs. An independent record-ID lookup verified the exact {len(readable):,} original mining PDFs against {len(records):,} metadata records, including every category count and percentage. The largest difference was {largest_gap.case_category} ({largest_gap.difference_pp:+.2f} percentage points). The report and `outputs/sample_representativeness.csv` document the comparison. The notebook's descriptions and Python formatting were revised while preserving the original analysis outputs.
+- The report contains the benchmark rows at the precision shown. The rendered report and all 13 figures were checked. The notebook generates a separate analysis summary for reproducibility.
+- The summary stage was run from saved inputs during final packaging. Earlier notebook stages retained their saved outputs. The benchmark medians match the raw repetitions per workload and algorithm.
 - The first {evidence['workloads'][0]['documents']:,} transactions produced {evidence['workloads'][0]['frequent']} frequent itemsets and {evidence['workloads'][0]['closed']} closed ones, a {evidence['workloads'][0]['reduction']:.2%} reduction. Direct basket intersection verified that {{{example['itemset'].replace(' | ', ', ')}}} and its strict closure {{{example['closure'].replace(' | ', ', ')}}} share {example['support_count']} supporting documents ({example['support']:.1%}). The full workload retains all {closure['closed']} frequent itemsets.
 - The selected k={cluster['selected_k']} scored highest among the four tested values. The final report identifies weak separation and uses medoid {tax_cluster.medoid_diary_no} and the characteristic terms of cluster {tax_cluster.name} to illustrate its tax-assessment vocabulary.
 - The original Spark review checked all {len(baskets):,} available transaction documents and per-run preparation measurements. On that sample, preparation alone took a median {timings.loc[(timings.documents.eq(len(baskets))) & timings.algorithm.eq("FP-Growth"), "spark_prepare_seconds"].median():.4f} s for FP-Growth and {timings.loc[(timings.documents.eq(len(baskets))) & timings.algorithm.eq("A-Close"), "spark_prepare_seconds"].median():.4f} s for A-Close. The report explains data conversion, partitioning, JVM task scheduling and driver collection.
@@ -307,7 +349,8 @@ def package():
 """, encoding="utf-8")
 
     sources = [NOTEBOOK, PDF, AUDIT, ROOT / "README.md", ROOT / "tools" / "run_asbd.py",
-               ROOT / "tools" / "finalize_asbd.py", OUT / "execution_progress.json", *stages]
+               ROOT / "tools" / "finalize_asbd.py", ROOT / "requirements.txt",
+               OUT / "execution_progress.json", *stages]
     if extension_text:
         sources.append(ROOT / "tools" / "benchmark_larger_spark.py")
     prefixes = ("metadata_", "pdf_sample_", "pdf_summary", "fp_", "aclose_", "concept_", "transaction",
@@ -318,14 +361,19 @@ def package():
     sources += [path for path in sorted(OUT.iterdir())
                 if path.suffix in {".csv", ".json"} and path.name.startswith(prefixes)]
     sources += [ROOT / "figures" / item["file"] for item in all_figures]
+    def member_name(path):
+        if path == PDF:
+            return FINAL_PDF.name
+        return path.relative_to(ROOT).as_posix()
+
     tmp = ARCHIVE.with_suffix(".tmp")
     with ZipFile(tmp, "w", compression=ZIP_DEFLATED, compresslevel=6) as archive:
         for path in sources:
-            archive.write(path, path.relative_to(ROOT).as_posix())
+            archive.write(path, member_name(path))
     with ZipFile(tmp) as archive:
         assert archive.testzip() is None
-        assert set(archive.namelist()) == {path.relative_to(ROOT).as_posix() for path in sources}
-        assert all(archive.read(path.relative_to(ROOT).as_posix()) == path.read_bytes() for path in sources)
+        assert set(archive.namelist()) == {member_name(path) for path in sources}
+        assert all(archive.read(member_name(path)) == path.read_bytes() for path in sources)
     tmp.replace(ARCHIVE)
     print(f"Verified {len(sources)} files in {ARCHIVE.name}")
 

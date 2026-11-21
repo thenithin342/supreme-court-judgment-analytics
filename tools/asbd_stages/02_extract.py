@@ -1,5 +1,5 @@
 # 2. PDF text and legal-concept transactions
-# Sample 4,000 unique matching filenames uniformly without replacement, using seed 42. Keep readable documents with no dictionary hit as empty baskets. The first 600 sampled filenames form the K-Medoids candidate pool.
+# Draw 4,000 distinct linked filenames without replacement using seed 42. Extract the PDF text layer with a 250,000-character cap and record extraction outcomes. Keep readable documents with no concept matches as empty baskets.
 from hashlib import sha256
 
 PDF_SAMPLE = 4000
@@ -49,13 +49,22 @@ vocabulary = {
     "burden of proof": r"burden of proof",
     "tenant": r"tenancy|tenant|rent control",
 }
-patterns = {key: re.compile(r"(?<!\w)(?:" + value + r")(?!\w)", re.I)
-            for key, value in vocabulary.items()}
+patterns = {
+    key: re.compile(r"(?<!\w)(?:" + value + r")(?!\w)", re.I)
+    for key, value in vocabulary.items()
+}
 write_json(OUT / "legal_vocabulary.json", vocabulary)
+
 
 def extract_judgment(pdf_path, max_chars=MAX_TEXT_CHARS_PER_DOCUMENT):
     # Reuse the starter's one-document extraction budget and record truncation.
-    result = {"status": "ok", "page_count": None, "text": "", "error": None, "truncated": False}
+    result = {
+        "status": "ok",
+        "page_count": None,
+        "text": "",
+        "error": None,
+        "truncated": False,
+    }
     try:
         chunks, remaining = [], max_chars
         with fitz.open(pdf_path) as doc:
@@ -76,14 +85,27 @@ def extract_judgment(pdf_path, max_chars=MAX_TEXT_CHARS_PER_DOCUMENT):
         result["error"] = f"{type(exc).__name__}: {exc}"
     return result
 
-pool = (meta.loc[meta.is_pdf_available, ["record_id", "diary_no", "pdf_filename", "case_category"]]
-        .drop_duplicates("pdf_filename"))
-sample = pool.sample(n=min(PDF_SAMPLE, len(pool)), random_state=SEED).reset_index(drop=True)
+
+pool = meta.loc[
+    meta.is_pdf_available, ["record_id", "diary_no", "pdf_filename", "case_category"]
+].drop_duplicates("pdf_filename")
+sample = pool.sample(n=min(PDF_SAMPLE, len(pool)), random_state=SEED).reset_index(
+    drop=True
+)
 sample.to_csv(OUT / "pdf_sample_manifest.csv", index=False)
 sample_paths = [pdf_dir / name for name in sample.pdf_filename]
 file_versions = [(p.name, p.stat().st_size, p.stat().st_mtime_ns) for p in sample_paths]
-cache_key = sha256(repr((3, file_versions, tuple(vocabulary.items()), MAX_TEXT_CHARS_PER_DOCUMENT,
-                         CLUSTER_POOL)).encode()).hexdigest()[:16]
+cache_key = sha256(
+    repr(
+        (
+            3,
+            file_versions,
+            tuple(vocabulary.items()),
+            MAX_TEXT_CHARS_PER_DOCUMENT,
+            CLUSTER_POOL,
+        )
+    ).encode()
+).hexdigest()[:16]
 cache = OUT / f"pdf_extract_{cache_key}.jsonl"
 cached = {}
 fresh_extraction = os.environ.get("ASBD_FRESH_EXTRACTION") == "1"
@@ -107,33 +129,58 @@ with cache.open("w" if fresh_extraction else "a", encoding="utf-8") as stream:
         if path.name not in cached:
             result = extract_judgment(path)
             text = result.pop("text")
-            result.update(pdf_filename=path.name, word_count=len(text.split()),
-                          concepts=[key for key, pattern in patterns.items() if pattern.search(text)],
-                          cluster_text=text if index < CLUSTER_POOL else "")
+            result.update(
+                pdf_filename=path.name,
+                word_count=len(text.split()),
+                concepts=[
+                    key for key, pattern in patterns.items() if pattern.search(text)
+                ],
+                cluster_text=text if index < CLUSTER_POOL else "",
+            )
             stream.write(json.dumps(result, ensure_ascii=False) + "\n")
             stream.flush()
             cached[path.name] = result
         if (index + 1) % 500 == 0:
             print(f"PDF progress: {index + 1:,}/{len(sample):,}")
-            write_json(OUT / "extraction_progress.json",
-                       {"processed": index + 1, "sampled": len(sample), "cache_hits": cache_hits})
+            write_json(
+                OUT / "extraction_progress.json",
+                {
+                    "processed": index + 1,
+                    "sampled": len(sample),
+                    "cache_hits": cache_hits,
+                },
+            )
 
-extracted = sample.merge(pd.DataFrame(cached.values()), on="pdf_filename", validate="one_to_one")
+extracted = sample.merge(
+    pd.DataFrame(cached.values()), on="pdf_filename", validate="one_to_one"
+)
 readable = extracted.loc[extracted.status.eq("ok")].copy()
+
+
 def csv_features(frame):
     return frame.drop(columns="cluster_text").assign(
         concepts=frame.concepts.map(" | ".join),
-        error=frame.error.str.replace(r"filename=.*$", "filename recorded separately", regex=True))
+        error=frame.error.str.replace(
+            r"filename=.*$", "filename recorded separately", regex=True
+        ),
+    )
+
 
 csv_features(extracted).to_csv(OUT / "pdf_sample_features.csv", index=False)
-pdf_summary = {"seed": SEED, "sampling_frame": len(pool), "sampled": len(sample),
-               "readable": len(readable), "statuses": {k: int(v) for k, v in extracted.status.value_counts().items()},
-               "truncated": int(extracted.truncated.sum()), "text_char_cap": MAX_TEXT_CHARS_PER_DOCUMENT,
-               "cluster_pool": CLUSTER_POOL, "cache_hits": cache_hits,
-               "live_pdf_attempts": len(sample) - cache_hits}
+pdf_summary = {
+    "seed": SEED,
+    "sampling_frame": len(pool),
+    "sampled": len(sample),
+    "readable": len(readable),
+    "statuses": {k: int(v) for k, v in extracted.status.value_counts().items()},
+    "truncated": int(extracted.truncated.sum()),
+    "text_char_cap": MAX_TEXT_CHARS_PER_DOCUMENT,
+    "cluster_pool": CLUSTER_POOL,
+    "cache_hits": cache_hits,
+    "live_pdf_attempts": len(sample) - cache_hits,
+}
 assert len(extracted) == len(sample) and extracted.pdf_filename.is_unique
 assert len(readable) > 0 and readable.word_count.gt(0).all()
 write_json(OUT / "pdf_summary.json", pdf_summary)
 display(pd.DataFrame([pdf_summary]).drop(columns="statuses"))
 display(csv_features(extracted).drop(columns="error").head(8))
-

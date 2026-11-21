@@ -24,13 +24,8 @@ if not STARTER.exists():
 
 starter = nbformat.read(STARTER, as_version=4)
 notebook = nbformat.v4.new_notebook(metadata=starter.metadata)
-notebook.cells.append(nbformat.v4.new_markdown_cell(
-    "# Indian Supreme Court judgments\n\n"
-    "**25CS5004 / CS 5010 · Analytics & Systems of Big Data Practice · November 2025 Endsem**\n\n"
-    "Run from the folder containing `data/judgments.csv` and `data/pdfs/`. "
-    "Python, the packages imported below, and a working Java/PySpark installation are required. "
-    "The notebook writes each section's results to `outputs/` and its plots to `figures/`."
-))
+current = nbformat.read(NOTEBOOK, as_version=4)
+notebook.cells.append(nbformat.v4.new_markdown_cell(current.cells[0].source))
 for stage in sorted(SOURCES.glob("*.py")):
     title, description, code = stage.read_text(encoding="utf-8").split("\n", 2)
     notebook.cells.extend([

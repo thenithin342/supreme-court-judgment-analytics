@@ -8,21 +8,23 @@ A reproducible analysis of **47,400 Indian Supreme Court judgment records** and 
 
 ![Horizontal bar chart of the eight leading case categories. Civil appeal is the largest category.](figures/01_case_categories.png)
 
-## Results
+## Results and evidence
 
-| Analysis | Finding | Evidence |
-| --- | --- | --- |
-| Data quality and descriptive analytics | Cleaned 47,400 metadata records and matched 47,388 to PDFs. The notebook explains ten distinct plot types. | [Metadata summary](outputs/metadata_summary.json), [plot interpretations](outputs/descriptive_figures.json) |
-| Sample composition | Of 4,000 sampled PDFs, 3,843 were readable. The largest difference in case-category share was 0.43 percentage points. | [Extraction summary](outputs/pdf_summary.json), [category comparison](outputs/sample_representativeness.csv) |
-| FP-Growth | At 2% support, 50% confidence, and 1.10 minimum lift, the original workload yielded 192 frequent itemsets and 417 rules. | [Itemsets](outputs/fp_itemsets.csv), [rules](outputs/fp_rules.csv), [support sensitivity](outputs/fp_support_sensitivity.csv) |
-| A-Close | All 192 frequent itemsets were closed in the original workload. In the 1,000-document prefix, 172 of 193 were closed, a 10.88% reduction. | [Closed itemsets](outputs/aclose_closed_itemsets.csv), [rules](outputs/aclose_rules.csv), [worked example](outputs/aclose_workload_comparison.json) |
-| K-Medoids | Five clusters scored highest among the tested values of k = 2–5 on 560 documents. A mean silhouette of 0.109 indicates weak separation. | [Trials](outputs/kmedoids_trials.csv), [medoids and terms](outputs/kmedoids_clusters.csv) |
+| Analysis | Notebook section | Finding | Evidence |
+| --- | --- | --- | --- |
+| Data quality and descriptive analytics | 1 and 3 | Cleaned 47,400 metadata records and matched 47,388 to PDFs. The notebook explains ten distinct plot types. | [Metadata summary](outputs/metadata_summary.json), [plot interpretations](outputs/descriptive_figures.json) |
+| Sample composition | 2 | Of 4,000 sampled PDFs, 3,843 were readable. The largest difference in case-category share was 0.43 percentage points. | [Extraction summary](outputs/pdf_summary.json), [category comparison](outputs/sample_representativeness.csv) |
+| FP-Growth | 4 | At 2% support, 50% confidence, and 1.10 minimum lift, the original workload yielded 192 frequent itemsets and 417 rules. | [Itemsets](outputs/fp_itemsets.csv), [rules](outputs/fp_rules.csv), [support sensitivity](outputs/fp_support_sensitivity.csv) |
+| A-Close | 5 | All 192 frequent itemsets were closed in the original workload. In the 1,000-document prefix, 172 of 193 were closed, a 10.88% reduction. | [Closed itemsets](outputs/aclose_closed_itemsets.csv), [rules](outputs/aclose_rules.csv), [worked example](outputs/aclose_workload_comparison.json) |
+| K-Medoids | 6 | Five clusters scored highest among the tested values of k = 2–5 on 560 documents. A mean silhouette of 0.109 indicates weak separation. | [Trials](outputs/kmedoids_trials.csv), [medoids and terms](outputs/kmedoids_clusters.csv) |
 
-The category comparison tests one dimension of sample coverage. Year, language, and extraction success can still affect coverage. The association rules describe textual co-occurrence, and the document clusters are exploratory.
+The metadata analysis counts one CSV row per record. The original mining analysis counts one readable PDF per transaction, including 501 readable documents with no vocabulary matches. Extraction uses the PDF text layer. The category comparison tests one dimension of sample coverage, since year, language, and extraction success can still affect coverage.
+
+The association rules describe textual co-occurrence. K-Medoids explores vocabulary groups and identifies a representative judgment for each group. All 47,400 records share the same normalized judgment type, which left no classes to distinguish for a judgment-type classifier.
 
 ## PySpark benchmark
 
-Both PySpark implementations agreed with their local counterparts in **all 14 paired runs**. Spark 4.0.1 ran on two threads (`local[2]`) and was slower in all six median comparisons. Timings include input preparation, mining and result collection. Session startup and warm-up were measured separately.
+Notebook section 7 documents both PySpark implementations and their correctness checks. Both implementations agreed with their local counterparts in **all 14 paired runs**. Spark 4.0.1 ran on two threads (`local[2]`) and was slower in all six median comparisons. Timings include input preparation, mining and result collection. Session startup and warm-up were measured separately.
 
 | Transactions | Algorithm | Local median | Spark median | Local ÷ Spark |
 | ---: | --- | ---: | ---: | ---: |
@@ -58,6 +60,8 @@ To reproduce the extended Spark benchmark after the original run, use `python to
 | [`tools/benchmark_larger_spark.py`](tools/benchmark_larger_spark.py) | Extended 9,591-transaction experiment |
 | [`figures/`](figures/) | Descriptive and algorithm figures |
 | [`outputs/`](outputs/) | Selected result tables and summaries |
+
+The notebook generates a reproducible summary at `outputs/ASBD_EndSem_Analysis_Summary.pdf`. The submission package carries the detailed `ASBD_EndSem_Report.pdf` separately.
 
 The raw archive, bulk record-level exports, extraction journals, backups, and local report builds are excluded from Git.
 

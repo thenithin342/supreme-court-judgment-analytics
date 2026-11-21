@@ -73,7 +73,12 @@ def benchmark(baskets, baseline_size, extracted):
     namespace = dict(globals())
     # Reuse notebook engine initialization and warm-up without its original benchmark loop.
     spark_path = STAGES / "07_spark.py"
-    startup = spark_path.read_text(encoding="utf-8").split("write_json(OUT", 1)[0]
+    startup, _ = re.split(
+        r"^write_json\(\s*OUT\b",
+        spark_path.read_text(encoding="utf-8"),
+        maxsplit=1,
+        flags=re.MULTILINE,
+    )
     started = time.perf_counter()
     exec(compile(startup, str(spark_path), "exec"), namespace)
     spark = namespace["spark"]
