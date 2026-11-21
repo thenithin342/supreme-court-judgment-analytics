@@ -1,0 +1,11 @@
+{
+  "sample": 560,
+  "selected_k": 5,
+  "silhouette": 0.10892157839996039,
+  "distance": "cosine",
+  "tfidf_features": 8500,
+  "svd_dimensions": 60,
+  "svd_variance": 0.29021480679512024,
+  "plot_variance": 0.12738145887851715,
+  "min_words": 100
+}

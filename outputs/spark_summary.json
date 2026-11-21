@@ -1,0 +1,22 @@
+{
+  "version": "4.0.1",
+  "master": "local[2]",
+  "startup_seconds": 15.794949600007385,
+  "warmup_seconds": 4.462699599986081,
+  "preparation": [
+    {
+      "documents": 1000,
+      "spark_cache_seconds": 0.16459140000370098
+    },
+    {
+      "documents": 3843,
+      "spark_cache_seconds": 0.1709589500023867
+    }
+  ],
+  "repetitions": 2,
+  "workloads": [
+    1000,
+    3843
+  ],
+  "all_supports_equal": true
+}

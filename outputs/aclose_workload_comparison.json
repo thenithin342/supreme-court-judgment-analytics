@@ -1,0 +1,25 @@
+{
+  "workloads": [
+    {
+      "documents": 1000,
+      "frequent": 193,
+      "closed": 172,
+      "nonclosed": 21,
+      "reduction": 0.10880829015544041
+    },
+    {
+      "documents": 3843,
+      "frequent": 192,
+      "closed": 192,
+      "nonclosed": 0,
+      "reduction": 0.0
+    }
+  ],
+  "example": {
+    "itemset": "benefit of doubt | murder",
+    "closure": "benefit of doubt | murder | penal code",
+    "documents": 1000,
+    "support_count": 41,
+    "support": 0.041
+  }
+}

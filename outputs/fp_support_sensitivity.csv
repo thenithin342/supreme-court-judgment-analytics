@@ -1,0 +1,4 @@
+min_support,documents,empty_baskets,min_confidence,min_lift,frequent_itemsets,rules,max_itemset_length,antecedent,consequent,rule_support,rule_confidence,rule_lift
+0.015,3843,501,0.5,1.1,302,847,5,medical evidence,eyewitness,0.030705178246161854,0.6113989637305699,9.59022945965951
+0.02,3843,501,0.5,1.1,192,417,5,medical evidence,eyewitness,0.030705178246161854,0.6113989637305699,9.59022945965951
+0.03,3843,501,0.5,1.1,94,128,4,medical evidence,eyewitness,0.030705178246161854,0.6113989637305699,9.59022945965951

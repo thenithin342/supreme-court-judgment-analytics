@@ -1,0 +1,61 @@
+# Downloaded archive and local submission materials
+/data/
+/latex_codex/
+/latex_sonnet/
+/ASBD_EndSem_Report.pdf
+/ASBD_EndSem_Submission.zip
+/FINAL_AUDIT.md
+/screenshots/
+*.zip
+
+# Python environments and working files
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+*.egg-info/
+.env
+.env.*
+.qodo/
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Keep only selected analytical results. Record-level data, extraction
+# journals, local environment probes and audit backups stay local.
+/outputs/*
+!/outputs/metadata_summary.json
+!/outputs/metadata_missingness.csv
+!/outputs/pdf_summary.json
+!/outputs/descriptive_figures.json
+!/outputs/sample_representativeness.csv
+!/outputs/legal_vocabulary.json
+!/outputs/fp_summary.json
+!/outputs/fp_itemsets.csv
+!/outputs/fp_rules.csv
+!/outputs/fp_support_sensitivity.csv
+!/outputs/aclose_summary.json
+!/outputs/aclose_closed_itemsets.csv
+!/outputs/aclose_rules.csv
+!/outputs/aclose_workload_comparison.json
+!/outputs/kmedoids_summary.json
+!/outputs/kmedoids_trials.csv
+!/outputs/kmedoids_clusters.csv
+!/outputs/spark_summary.json
+!/outputs/spark_benchmark_runs.csv
+!/outputs/spark_benchmark_summary.csv
+!/outputs/spark_extended_summary.json
+!/outputs/spark_extended_benchmark_runs.csv
+!/outputs/spark_extended_benchmark_summary.csv
+
+# Historical intake, preflight, and coursework utilities
+/tools/audit_lab_dependencies.py
+/tools/inspect_dataset.py
+/tools/preflight_local.py
+/tools/preflight_spark.py
+

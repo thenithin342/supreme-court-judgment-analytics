@@ -1,0 +1,16 @@
+{
+  "seed": 42,
+  "sampling_frame": 47387,
+  "sampled": 4000,
+  "readable": 3843,
+  "statuses": {
+    "ok": 3843,
+    "error": 125,
+    "empty_text_or_scanned": 32
+  },
+  "truncated": 17,
+  "text_char_cap": 250000,
+  "cluster_pool": 600,
+  "cache_hits": 0,
+  "live_pdf_attempts": 4000
+}

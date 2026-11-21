@@ -1,0 +1,24 @@
+{
+  "seed": 43,
+  "sampled": 6000,
+  "baseline_documents": 3843,
+  "added_readable": 5748,
+  "documents": 9591,
+  "statuses": {
+    "ok": 5748,
+    "error": 195,
+    "empty_text_or_scanned": 57
+  },
+  "empty_baskets": 1272,
+  "repetitions": 3,
+  "support": 0.02,
+  "confidence": 0.5,
+  "lift": 1.1,
+  "fp_rules": 401,
+  "closed_union_rules": 401,
+  "spark_version": "4.0.1",
+  "master": "local[2]",
+  "setup_seconds": 19.102223800000502,
+  "warmup_seconds": 5.839686799998162,
+  "verified_matches": 6
+}

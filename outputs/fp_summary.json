@@ -1,0 +1,24 @@
+{
+  "transactions": 3843,
+  "empty": 501,
+  "observed_vocabulary": 43,
+  "mean_items": 2.6947697111631537,
+  "max_items": 19,
+  "min_support": 0.02,
+  "min_confidence": 0.5,
+  "min_lift": 1.1,
+  "items": 192,
+  "itemsets_by_length": {
+    "1": 39,
+    "2": 60,
+    "3": 61,
+    "4": 31,
+    "5": 1
+  },
+  "rules": 417,
+  "interpretations": [
+    "Medical evidence → eyewitness: 61.1% of documents mentioning the antecedent also mention the consequent, against 6.4% in the entire readable sample (support 3.1%, lift 9.59).",
+    "Medical evidence → life imprisonment: 61.1% of documents mentioning the antecedent also mention the consequent, against 7.6% in the entire readable sample (support 3.1%, lift 8.07).",
+    "Life imprisonment → murder: 67.4% of documents mentioning the antecedent also mention the consequent, against 8.4% in the entire readable sample (support 5.1%, lift 8.01)."
+  ]
+}

@@ -1,0 +1,418 @@
+antecedent,consequent,support,confidence,lift
+eyewitness | life imprisonment,medical evidence,0.02029664324746292,0.6046511627906976,12.039763826967103
+medical evidence | murder,eyewitness | penal code,0.022118136872235232,0.6799999999999999,11.66625
+eyewitness | murder,medical evidence | penal code,0.022118136872235232,0.5214723926380368,11.071924888994339
+medical evidence | murder | penal code,eyewitness,0.022118136872235232,0.7024793388429751,11.01889020070838
+eyewitness | murder | penal code,medical evidence,0.022118136872235232,0.551948051948052,10.990343853038153
+medical evidence | murder,eyewitness,0.02263856362217018,0.6960000000000001,10.917257142857142
+benefit of doubt | murder,first information report | life imprisonment | penal code,0.020036429872495445,0.5133333333333333,10.899116022099447
+benefit of doubt | murder,medical evidence | penal code,0.020036429872495445,0.5133333333333333,10.899116022099447
+benefit of doubt | murder | penal code,first information report | life imprisonment,0.020036429872495445,0.5273972602739726,10.896707909854177
+eyewitness | life imprisonment,first information report | murder,0.020036429872495445,0.5968992248062015,10.820206230802983
+first information report | medical evidence,eyewitness | penal code,0.0234192037470726,0.6293706293706295,10.797639860139862
+eyewitness | first information report,medical evidence | penal code,0.0234192037470726,0.5084745762711864,10.795954677404252
+benefit of doubt | life imprisonment,first information report | murder | penal code,0.020036429872495445,0.5661764705882353,10.771367210250437
+benefit of doubt | murder,first information report | life imprisonment,0.02029664324746292,0.52,10.743870967741936
+eyewitness | first information report | penal code,medical evidence,0.0234192037470726,0.5389221556886228,10.730973286587448
+eyewitness | murder,medical evidence,0.02263856362217018,0.5337423312883436,10.627833052544581
+eyewitness | first information report,medical evidence,0.024460057246942495,0.5310734463276836,10.574690436462632
+benefit of doubt | murder | penal code,medical evidence,0.020036429872495445,0.5273972602739726,10.501490524522676
+benefit of doubt | life imprisonment | penal code,first information report | murder,0.020036429872495445,0.5789473684210527,10.494786494538232
+benefit of doubt | first information report | life imprisonment,murder | penal code,0.020036429872495445,0.7938144329896907,10.483260707832926
+benefit of doubt | murder,eyewitness | penal code,0.023679417122040074,0.6066666666666667,10.408125
+benefit of doubt | life imprisonment,first information report | murder,0.02029664324746292,0.573529411764706,10.396573251942288
+life imprisonment | medical evidence,eyewitness,0.02029664324746292,0.6610169491525424,10.368523002421307
+benefit of doubt | murder,medical evidence,0.02029664324746292,0.52,10.354196891191709
+first information report | medical evidence,eyewitness,0.024460057246942495,0.6573426573426574,10.31088911088911
+first information report | medical evidence | penal code,eyewitness,0.0234192037470726,0.656934306569343,10.304483837330551
+medical evidence | murder,benefit of doubt | penal code,0.020036429872495445,0.616,10.203827586206897
+medical evidence,eyewitness | penal code,0.029404111371324485,0.5854922279792746,10.04485103626943
+eyewitness | penal code,medical evidence,0.029404111371324485,0.5044642857142857,10.04485103626943
+benefit of doubt | life imprisonment,murder | penal code,0.026801977621649754,0.7573529411764706,10.001743480897513
+eyewitness | life imprisonment,benefit of doubt | penal code,0.020036429872495445,0.5968992248062015,9.88742983159583
+life imprisonment | medical evidence,murder | penal code,0.022898776997137653,0.7457627118644068,9.848680761838196
+medical evidence | murder,life imprisonment | penal code,0.022898776997137653,0.7040000000000001,9.802434782608698
+medical evidence | penal code,eyewitness,0.029404111371324485,0.6243093922651933,9.792738752959746
+benefit of doubt | medical evidence,murder | penal code,0.020036429872495445,0.7403846153846153,9.777656621728786
+benefit of doubt | murder | penal code,eyewitness,0.023679417122040074,0.6232876712328768,9.776712328767124
+eyewitness | life imprisonment,murder | penal code,0.024720270621909967,0.7364341085271318,9.725485495085112
+benefit of doubt | murder,eyewitness,0.02419984387197502,0.62,9.725142857142856
+benefit of doubt | life imprisonment,eyewitness | penal code,0.020036429872495445,0.5661764705882353,9.713465073529411
+first information report | life imprisonment | murder,benefit of doubt | penal code,0.020036429872495445,0.5833333333333333,9.662715517241377
+benefit of doubt | first information report | life imprisonment | penal code,murder,0.020036429872495445,0.8105263157894737,9.643506599315627
+first information report | murder,eyewitness | penal code,0.030965391621129327,0.5613207547169811,9.630159198113207
+eyewitness | penal code,first information report | murder,0.030965391621129327,0.53125,9.630159198113207
+medical evidence | murder,life imprisonment,0.023679417122040074,0.7280000000000001,9.614103092783505
+medical evidence | murder | penal code,life imprisonment,0.022898776997137653,0.7272727272727272,9.604498594189314
+medical evidence,eyewitness,0.030705178246161854,0.6113989637305699,9.59022945965951
+benefit of doubt | first information report | life imprisonment,murder,0.02029664324746292,0.8041237113402063,9.567329481982702
+benefit of doubt | murder,life imprisonment | penal code,0.026801977621649754,0.6866666666666666,9.56108695652174
+benefit of doubt | eyewitness,murder | penal code,0.023679417122040074,0.7222222222222222,9.537800687285223
+eyewitness | medical evidence,murder | penal code,0.022118136872235232,0.7203389830508474,9.512930281320985
+benefit of doubt | first information report | murder,life imprisonment | penal code,0.020036429872495445,0.6814159292035398,9.487976144671027
+eyewitness | first information report | life imprisonment,murder,0.020036429872495445,0.7857142857142856,9.34829721362229
+benefit of doubt | murder | penal code,life imprisonment,0.026801977621649754,0.7054794520547946,9.31669255754837
+medical evidence | penal code,first information report | murder,0.02419984387197502,0.5138121546961326,9.31405712498697
+first information report | murder,eyewitness,0.032526671870934165,0.5896226415094339,9.248652291105119
+eyewitness,first information report | murder,0.032526671870934165,0.510204081632653,9.248652291105119
+eyewitness | murder,benefit of doubt | penal code,0.023679417122040074,0.558282208588957,9.247752274169663
+benefit of doubt | murder,life imprisonment,0.0273224043715847,0.7,9.244329896907216
+first information report | murder | penal code,eyewitness,0.030965391621129327,0.5891089108910892,9.240594059405941
+benefit of doubt | life imprisonment | penal code,murder,0.026801977621649754,0.7744360902255639,9.21411112921623
+benefit of doubt | life imprisonment,murder,0.0273224043715847,0.7720588235294117,9.185826807503187
+benefit of doubt | first information report,eyewitness | penal code,0.023939630497007546,0.5348837209302325,9.176598837209301
+life imprisonment | medical evidence,murder,0.023679417122040074,0.771186440677966,9.175447342183974
+benefit of doubt | medical evidence | penal code,murder,0.020036429872495445,0.77,9.161331269349846
+benefit of doubt | first information report | murder | penal code,life imprisonment,0.020036429872495445,0.6936936936936936,9.161047645583727
+first information report | life imprisonment | murder,eyewitness,0.020036429872495445,0.5833333333333333,9.149999999999999
+eyewitness | life imprisonment,murder,0.02576112412177986,0.7674418604651162,9.130894952840377
+benefit of doubt | first information report | murder,life imprisonment,0.02029664324746292,0.6902654867256638,9.115774108201807
+eyewitness | life imprisonment | penal code,murder,0.024720270621909967,0.7661290322580645,9.11527514231499
+benefit of doubt | life imprisonment,eyewitness,0.020556856622430394,0.5808823529411765,9.11155462184874
+medical evidence,first information report | murder,0.025240697371844912,0.5025906735751295,9.110641313911428
+life imprisonment | medical evidence | penal code,murder,0.022898776997137653,0.7652173913043478,9.104428590658232
+benefit of doubt | eyewitness | penal code,murder,0.023679417122040074,0.7647058823529412,9.098342742669823
+first information report | life imprisonment,murder | penal code,0.033307311995836586,0.6881720430107527,9.0881277020286
+benefit of doubt | life imprisonment | penal code,eyewitness,0.020036429872495445,0.5789473684210527,9.081203007518797
+criminal procedure | eyewitness,murder | penal code,0.023679417122040074,0.6842105263157895,9.035811177428107
+first information report | medical evidence,benefit of doubt | penal code,0.02029664324746292,0.5454545454545455,9.035266457680253
+benefit of doubt | first information report | penal code,eyewitness,0.023939630497007546,0.5714285714285714,8.963265306122448
+eyewitness | medical evidence | penal code,murder,0.022118136872235232,0.7522123893805309,8.949697251979506
+benefit of doubt | medical evidence,murder,0.02029664324746292,0.7500000000000001,8.923374613003098
+eyewitness | first information report,murder | penal code,0.030965391621129327,0.672316384180791,8.87873492923292
+benefit of doubt | eyewitness,murder,0.02419984387197502,0.738095238095238,8.78173374613003
+eyewitness | medical evidence,murder,0.02263856362217018,0.7372881355932204,8.77213097549457
+criminal procedure | murder,eyewitness | penal code,0.023679417122040074,0.5112359550561798,8.770891853932584
+benefit of doubt | first information report,eyewitness,0.02498048399687744,0.5581395348837209,8.754817275747508
+eyewitness | medical evidence,life imprisonment,0.02029664324746292,0.6610169491525424,8.729512493447492
+life imprisonment | murder,benefit of doubt | penal code,0.026801977621649754,0.5255102040816326,8.704895320197044
+criminal procedure | eyewitness,murder,0.025240697371844912,0.7293233082706767,8.677366791591982
+first information report | murder,benefit of doubt | penal code,0.02888368462138954,0.5235849056603773,8.673003415744956
+first information report | life imprisonment,eyewitness | penal code,0.024460057246942495,0.5053763440860216,8.670362903225808
+criminal procedure | first information report | life imprisonment,murder,0.020817069997397866,0.7272727272727272,8.65296932169997
+eyewitness | first information report,benefit of doubt | penal code,0.023939630497007546,0.519774011299435,8.609877264757452
+criminal procedure | murder | penal code,eyewitness,0.023679417122040074,0.5481927710843374,8.598795180722892
+criminal procedure | eyewitness | penal code,murder,0.023679417122040074,0.7222222222222222,8.592879256965944
+first information report | medical evidence,murder | penal code,0.02419984387197502,0.6503496503496504,8.588638165957754
+medical evidence,benefit of doubt | penal code,0.026021337496747333,0.5181347150259067,8.582722887261031
+criminal procedure | murder,eyewitness,0.025240697371844912,0.5449438202247191,8.547833065810593
+benefit of doubt | eyewitness | penal code,life imprisonment,0.020036429872495445,0.6470588235294117,8.545178896300786
+benefit of doubt | first information report,murder | penal code,0.02888368462138954,0.6453488372093023,8.522596499640374
+benefit of doubt | eyewitness,life imprisonment | penal code,0.020036429872495445,0.611111111111111,8.509057971014492
+eyewitness | first information report | penal code,murder,0.030965391621129327,0.7125748502994013,8.478096438701545
+first information report | medical evidence,life imprisonment | penal code,0.02263856362217018,0.6083916083916084,8.471191851626635
+first information report | life imprisonment,benefit of doubt | penal code,0.024720270621909967,0.510752688172043,8.460442157953281
+first information report | life imprisonment,murder,0.03434816549570648,0.7096774193548389,8.44362328972336
+life imprisonment,murder | penal code,0.04839968774395004,0.6391752577319587,8.441067063449887
+murder | penal code,life imprisonment,0.04839968774395004,0.6391752577319587,8.441067063449887
+first information report | life imprisonment | penal code,murder,0.033307311995836586,0.7071823204419889,8.413937019995553
+first information report | murder,life imprisonment | penal code,0.033307311995836586,0.6037735849056604,8.406890894175554
+eyewitness | first information report,murder,0.032526671870934165,0.7062146892655367,8.40242430602928
+medical evidence | penal code,life imprisonment,0.029924538121259434,0.6353591160220995,8.390670387879478
+first information report | medical evidence | penal code,life imprisonment,0.02263856362217018,0.635036496350365,8.386409812626985
+medical evidence | murder | penal code,benefit of doubt,0.020036429872495445,0.6363636363636362,8.375155666251555
+first information report | murder | penal code,life imprisonment,0.033307311995836586,0.6336633663366337,8.368276002858018
+first information report | medical evidence,life imprisonment,0.0234192037470726,0.6293706293706295,8.311585321894603
+eyewitness,murder | penal code,0.04007285974499089,0.6285714285714284,8.30103092783505
+murder | penal code,eyewitness,0.04007285974499089,0.5292096219931272,8.30103092783505
+medical evidence,life imprisonment | penal code,0.029924538121259434,0.5958549222797928,8.296632124352332
+benefit of doubt | eyewitness,life imprisonment,0.020556856622430394,0.626984126984127,8.280068728522336
+medical evidence,murder | penal code,0.031485818371064275,0.6269430051813472,8.279525666363977
+first information report | life imprisonment,eyewitness,0.025500910746812388,0.5268817204301076,8.264516129032259
+first information report | murder,life imprisonment,0.03434816549570648,0.6226415094339622,8.222719315308305
+criminal procedure | life imprisonment,murder | penal code,0.02654176424668228,0.6219512195121951,8.213603218506412
+medical evidence | murder,benefit of doubt,0.02029664324746292,0.6240000000000001,8.212438356164386
+benefit of doubt | first information report | penal code,murder,0.02888368462138954,0.6894409937888198,8.202853681518373
+eyewitness | penal code,murder,0.04007285974499089,0.6875,8.179760061919504
+eyewitness | life imprisonment | penal code,benefit of doubt,0.020036429872495445,0.6209677419354838,8.17253093239063
+eyewitness | murder | penal code,life imprisonment,0.024720270621909967,0.6168831168831169,8.146672914714152
+first information report | life imprisonment | penal code,eyewitness,0.024460057246942495,0.5193370165745856,8.146172059984213
+eyewitness | first information report | murder,life imprisonment,0.020036429872495445,0.616,8.13501030927835
+eyewitness | murder,life imprisonment | penal code,0.024720270621909967,0.5828220858895705,8.115164043744999
+criminal procedure | murder | penal code,life imprisonment,0.02654176424668228,0.6144578313253012,8.114644143584648
+criminal procedure | murder,life imprisonment,0.028363257871454592,0.6123595505617978,8.086933858450134
+first information report | medical evidence | penal code,murder,0.02419984387197502,0.6788321167883211,8.076631036586743
+medical evidence,life imprisonment,0.030705178246161854,0.6113989637305699,8.074248170503711
+first information report | medical evidence,murder,0.025240697371844912,0.6783216783216783,8.070557925047089
+criminal procedure | first information report | murder,life imprisonment,0.020817069997397866,0.6106870229007634,8.064846147792556
+eyewitness | life imprisonment,benefit of doubt,0.020556856622430394,0.6124031007751938,8.05981204205161
+benefit of doubt | penal code,eyewitness,0.030965391621129327,0.5129310344827587,8.045689655172414
+benefit of doubt | criminal procedure | penal code,life imprisonment,0.020556856622430394,0.6076923076923078,8.025297383029342
+eyewitness | murder,life imprisonment,0.02576112412177986,0.6073619631901841,8.020934792233255
+murder,life imprisonment | penal code,0.04839968774395004,0.5758513931888545,8.01810472472742
+life imprisonment | penal code,murder,0.04839968774395004,0.6739130434782609,8.018104724727419
+life imprisonment,murder,0.051001821493624776,0.6735395189003437,8.013660591746195
+murder,life imprisonment,0.051001821493624776,0.6068111455108359,8.013660591746193
+life imprisonment | murder | penal code,eyewitness,0.024720270621909967,0.510752688172043,8.011520737327189
+criminal procedure | murder,life imprisonment | penal code,0.02654176424668228,0.5730337078651686,7.978871519296533
+medical evidence | penal code,murder,0.031485818371064275,0.6685082872928177,7.953799839214547
+life imprisonment | murder,eyewitness,0.02576112412177986,0.5051020408163265,7.922886297376092
+first information report | life imprisonment | murder | penal code,benefit of doubt,0.020036429872495445,0.6015625,7.917139340753425
+murder,eyewitness,0.04241478011969815,0.5046439628482973,7.915701017249005
+eyewitness,murder,0.04241478011969815,0.6653061224489796,7.915701017249004
+criminal procedure | life imprisonment,murder,0.028363257871454592,0.6646341463414633,7.907705957864531
+criminal procedure | life imprisonment | penal code,murder,0.02654176424668228,0.6623376623376624,7.880382775119618
+benefit of doubt | criminal procedure | penal code,murder,0.022378350247202708,0.6615384615384616,7.870874017623245
+benefit of doubt | first information report,murder,0.029404111371324485,0.6569767441860465,7.816599467204262
+benefit of doubt | first information report | penal code,life imprisonment,0.024720270621909967,0.5900621118012422,7.792469744509189
+eyewitness | murder | penal code,benefit of doubt,0.023679417122040074,0.5909090909090909,7.776930261519303
+first information report | life imprisonment | murder,benefit of doubt,0.02029664324746292,0.5909090909090909,7.776930261519303
+benefit of doubt | criminal procedure,murder | penal code,0.022378350247202708,0.5850340136054422,7.7260677466863035
+medical evidence,murder,0.032526671870934165,0.6476683937823834,7.705850270296283
+benefit of doubt | first information report,life imprisonment | penal code,0.024720270621909967,0.5523255813953488,7.690533367037411
+first information report | prosecution witness,murder | penal code,0.021597710122300287,0.576388888888889,7.611898625429554
+benefit of doubt | penal code,life imprisonment,0.03460837887067395,0.5732758620689655,7.570787415570566
+eyewitness | murder,benefit of doubt,0.02419984387197502,0.5705521472392637,7.509013362467433
+first information report | medical evidence | penal code,benefit of doubt,0.02029664324746292,0.5693430656934306,7.493100689931007
+benefit of doubt | penal code,murder,0.037991152745251104,0.6293103448275862,7.487429272979609
+benefit of doubt | criminal procedure,life imprisonment | penal code,0.020556856622430394,0.5374149659863946,7.482919254658386
+first information report | medical evidence,benefit of doubt,0.02107728337236534,0.5664335664335665,7.454808889740398
+benefit of doubt | first information report,life imprisonment,0.025240697371844912,0.5639534883720929,7.44767441860465
+eyewitness | first information report | penal code,life imprisonment,0.024460057246942495,0.5628742514970061,7.433421816161493
+eyewitness | first information report,life imprisonment | penal code,0.024460057246942495,0.5310734463276836,7.394620486366986
+eyewitness | first information report,life imprisonment,0.025500910746812388,0.5536723163841808,7.311899353485934
+eyewitness | penal code,life imprisonment,0.032266458495966696,0.5535714285714286,7.310567010309279
+life imprisonment | murder | penal code,benefit of doubt,0.026801977621649754,0.5537634408602151,7.288057887759613
+benefit of doubt | criminal procedure,life imprisonment,0.02107728337236534,0.5510204081632653,7.276877761413843
+medical evidence | penal code,benefit of doubt,0.026021337496747333,0.5524861878453039,7.271248013320216
+first information report | penal code | prosecution witness,murder,0.021597710122300287,0.6102941176470589,7.261177381169187
+eyewitness | first information report | penal code,benefit of doubt,0.023939630497007546,0.5508982035928144,7.250348617832828
+first information report | murder | penal code,benefit of doubt,0.02888368462138954,0.5495049504950495,7.2320120710701215
+penal code | prosecution witness,benefit of doubt,0.02498048399687744,0.5485714285714286,7.219726027397261
+benefit of doubt | criminal procedure,murder,0.023158990372105125,0.6054421768707483,7.203449800973021
+first information report | prosecution witness,murder,0.02263856362217018,0.6041666666666667,7.188273993808051
+eyewitness | first information report,benefit of doubt,0.02498048399687744,0.5423728813559322,7.13814720222893
+medical evidence,benefit of doubt,0.027062190996617226,0.538860103626943,7.091915678898432
+first information report | prosecution witness,life imprisonment,0.020036429872495445,0.5347222222222222,7.06164089347079
+life imprisonment | murder,benefit of doubt,0.0273224043715847,0.5357142857142857,7.050513698630137
+eyewitness,life imprisonment | penal code,0.032266458495966696,0.5061224489795918,7.047204968944099
+first information report | murder,benefit of doubt,0.029404111371324485,0.5330188679245282,7.015039415869733
+eyewitness | penal code,benefit of doubt,0.030965391621129327,0.53125,6.991759417808219
+eyewitness,life imprisonment,0.03356752537080406,0.5265306122448979,6.953460972017673
+prosecution witness,murder | penal code,0.02654176424668228,0.5257731958762887,6.943458390902328
+penal code | prosecution witness,life imprisonment,0.023939630497007546,0.5257142857142857,6.942680412371134
+penal code | prosecution witness,murder,0.02654176424668228,0.582857142857143,6.934736842105265
+first information report | life imprisonment | penal code,benefit of doubt,0.024720270621909967,0.5248618784530387,6.9076856126542046
+first information report | life imprisonment,benefit of doubt,0.025240697371844912,0.521505376344086,6.8635108263367215
+prosecution witness,benefit of doubt,0.026281550871714805,0.520618556701031,6.851839429459117
+criminal procedure | murder | penal code,benefit of doubt,0.022378350247202708,0.5180722891566265,6.818328106948342
+eyewitness,benefit of doubt,0.03278688524590164,0.5142857142857142,6.7684931506849315
+criminal procedure | life imprisonment | penal code,benefit of doubt,0.020556856622430394,0.512987012987013,6.75140099626401
+prosecution witness,murder,0.028363257871454592,0.5618556701030928,6.684864830359707
+evidence act | penal code,benefit of doubt,0.020556856622430394,0.5064102564102564,6.664844573234984
+eyewitness | medical evidence,first information report | penal code,0.0234192037470726,0.7627118644067796,6.631451798450802
+murder | prosecution witness,first information report | penal code,0.021597710122300287,0.761467889908257,6.620635974926316
+murder | penal code,benefit of doubt,0.037991152745251104,0.5017182130584192,6.603092783505155
+benefit of doubt,murder | penal code,0.037991152745251104,0.5,6.603092783505154
+criminal procedure | medical evidence,first information report | penal code,0.02029664324746292,0.7572815533980582,6.584237578526556
+criminal procedure | murder,benefit of doubt,0.023158990372105125,0.5,6.580479452054795
+benefit of doubt | medical evidence,first information report | penal code,0.02029664324746292,0.7500000000000001,6.520927601809956
+medical evidence | murder,first information report | penal code,0.02419984387197502,0.744,6.468760180995475
+benefit of doubt | murder,first information report | penal code,0.02888368462138954,0.74,6.433981900452489
+life imprisonment | medical evidence,first information report | penal code,0.02263856362217018,0.7372881355932204,6.410403405169109
+benefit of doubt | life imprisonment | murder,first information report | penal code,0.020036429872495445,0.7333333333333333,6.376018099547511
+benefit of doubt | eyewitness,first information report | penal code,0.023939630497007546,0.7301587301587301,6.34841628959276
+eyewitness | murder,first information report | penal code,0.030965391621129327,0.7300613496932515,6.347569608305805
+eyewitness | life imprisonment,first information report | penal code,0.024460057246942495,0.7286821705426356,6.335578238451015
+criminal procedure | eyewitness,first information report | penal code,0.02498048399687744,0.7218045112781956,6.275779947606574
+penal code | prosecution witness,criminal procedure | first information report,0.023158990372105125,0.5085714285714286,6.224331210191083
+criminal procedure | prosecution witness,first information report | penal code,0.023158990372105125,0.712,6.190533936651583
+medical evidence,first information report | penal code,0.03564923237054385,0.7098445595854922,6.171793308794223
+benefit of doubt,murder,0.039032006245121,0.5136986301369864,6.111900419865135
+prosecution witness,first information report | penal code,0.03538901899557637,0.7010309278350516,6.095162569389374
+benefit of doubt | life imprisonment,first information report | penal code,0.024720270621909967,0.698529411764706,6.073412962470057
+criminal procedure | murder,first information report | penal code,0.032266458495966696,0.6966292134831462,6.05689155523921
+murder | penal code | prosecution witness,first information report,0.021597710122300287,0.8137254901960784,6.048640345886905
+life imprisonment | prosecution witness,first information report,0.020036429872495445,0.8020833333333333,5.962101063829787
+murder | prosecution witness,first information report,0.02263856362217018,0.798165137614679,5.932976061611628
+eyewitness,first information report | penal code,0.04345563361956804,0.6816326530612243,5.9265029088558485
+eyewitness | medical evidence,first information report,0.024460057246942495,0.7966101694915254,5.9214175654853625
+eyewitness | medical evidence | penal code,first information report,0.0234192037470726,0.7964601769911506,5.920302630903272
+criminal procedure | medical evidence,first information report,0.02107728337236534,0.7864077669902912,5.845580364687987
+benefit of doubt | medical evidence | penal code,first information report,0.02029664324746292,0.78,5.7979497098646045
+criminal procedure | medical evidence | penal code,first information report,0.02029664324746292,0.78,5.7979497098646045
+benefit of doubt | medical evidence,first information report,0.02107728337236534,0.7788461538461539,5.789372861181373
+eyewitness | life imprisonment | murder,first information report,0.020036429872495445,0.7777777777777777,5.781431334622823
+penal code | prosecution witness,first information report,0.03538901899557637,0.7771428571428571,5.776711798839458
+medical evidence | murder,first information report,0.025240697371844912,0.776,5.768216634429401
+benefit of doubt | eyewitness | penal code,first information report,0.023939630497007546,0.773109243697479,5.74672886562749
+eyewitness | murder | penal code,first information report,0.030965391621129327,0.7727272727272728,5.74388957270969
+medical evidence | murder | penal code,first information report,0.02419984387197502,0.7685950413223139,5.713173585689851
+criminal procedure | penal code | prosecution witness,first information report,0.023158990372105125,0.7672413793103448,5.703111452010938
+eyewitness | murder,first information report,0.032526671870934165,0.7668711656441718,5.700359554295073
+life imprisonment | murder,first information report | penal code,0.033307311995836586,0.6530612244897959,5.678086619263089
+life imprisonment | medical evidence,first information report,0.0234192037470726,0.7627118644067796,5.669442349932794
+benefit of doubt | eyewitness,first information report,0.02498048399687744,0.7619047619047619,5.663442940038685
+criminal procedure | eyewitness | penal code,first information report,0.02498048399687744,0.7619047619047619,5.663442940038685
+benefit of doubt | murder | penal code,first information report,0.02888368462138954,0.7602739726027398,5.651320844704698
+criminal procedure | prosecution witness,first information report,0.024720270621909967,0.76,5.649284332688588
+eyewitness | life imprisonment,first information report,0.025500910746812388,0.7596899224806202,5.646979443119968
+criminal procedure | eyewitness,first information report,0.026281550871714805,0.7593984962406015,5.6448131935254
+eyewitness | life imprisonment | penal code,first information report,0.024460057246942495,0.7580645161290323,5.634897360703812
+medical evidence | penal code,first information report,0.03564923237054385,0.7569060773480664,5.626286373788432
+life imprisonment | medical evidence | penal code,first information report,0.02263856362217018,0.7565217391304347,5.623429484484063
+criminal procedure | life imprisonment,first information report | penal code,0.027582617746552174,0.6463414634146342,5.619661185299636
+benefit of doubt | criminal procedure,first information report | penal code,0.024720270621909967,0.6462585034013606,5.6189398836457665
+benefit of doubt | murder,first information report,0.029404111371324485,0.7533333333333333,5.599729206963249
+benefit of doubt | life imprisonment | murder | penal code,first information report,0.020036429872495445,0.7475728155339805,5.556909729394753
+criminal procedure | murder | penal code,first information report,0.032266458495966696,0.746987951807229,5.552562280068049
+eyewitness | penal code,first information report,0.04345563361956804,0.7455357142857142,5.541767408123791
+benefit of doubt | life imprisonment | murder,first information report,0.02029664324746292,0.742857142857143,5.521856866537719
+prosecution witness,first information report,0.03747072599531616,0.7422680412371134,5.517477915810884
+medical evidence,first information report,0.03721051262034868,0.7409326424870465,5.50755153786793
+criminal procedure | murder,first information report,0.03408795212073901,0.7359550561797753,5.4705518005780975
+criminal procedure | life imprisonment | murder,first information report,0.020817069997397866,0.7339449541284404,5.4556101715968985
+murder,first information report | penal code,0.05256310174342961,0.6253869969040248,5.437471106565989
+benefit of doubt | criminal procedure | penal code,first information report,0.024720270621909967,0.7307692307692308,5.43200416604672
+first information report | prosecution witness,criminal procedure | penal code,0.023158990372105125,0.6180555555555556,5.422802511415525
+life imprisonment,first information report | penal code,0.04709862086911267,0.6219931271477663,5.407962867938611
+eyewitness,first information report,0.04605776736924278,0.7224489795918367,5.370157502072396
+benefit of doubt | life imprisonment | penal code,first information report,0.024720270621909967,0.7142857142857143,5.309477756286268
+benefit of doubt | life imprisonment,first information report,0.025240697371844912,0.7132352941176471,5.301669700762317
+prosecution witness,criminal procedure | penal code,0.030184751496226906,0.5979381443298969,5.246292896483547
+land acquisition,compensation,0.04345563361956804,0.8028846153846153,5.229636571056062
+murder | penal code,first information report,0.05256310174342961,0.6941580756013745,5.159863606452771
+benefit of doubt | penal code,first information report,0.04189435336976321,0.6939655172413793,5.158432268391917
+first information report | murder,criminal procedure | penal code,0.032266458495966696,0.5849056603773585,5.13194623933833
+criminal procedure | life imprisonment | penal code,first information report,0.027582617746552174,0.6883116883116884,5.116405837875859
+life imprisonment | murder | penal code,first information report,0.033307311995836586,0.6881720430107527,5.115367816809135
+benefit of doubt | criminal procedure,first information report,0.026281550871714805,0.6870748299319728,5.107211936999171
+benefit of doubt | life imprisonment,criminal procedure | penal code,0.020556856622430394,0.5808823529411765,5.09664585012087
+benefit of doubt | murder,criminal procedure | penal code,0.022378350247202708,0.5733333333333334,5.03041095890411
+life imprisonment | murder,first information report,0.03434816549570648,0.673469387755102,5.006079027355623
+first information report | life imprisonment,criminal procedure | penal code,0.027582617746552174,0.5698924731182796,5.000220945647371
+criminal procedure | life imprisonment,first information report,0.028623471246422068,0.6707317073170732,4.985729112610276
+eyewitness | murder,criminal procedure | penal code,0.023679417122040074,0.558282208588957,4.898352802756534
+murder,first information report,0.05516523549310435,0.6563467492260062,4.878801851596793
+life imprisonment | penal code,first information report,0.04709862086911267,0.6557971014492754,4.874716171894711
+benefit of doubt | first information report,criminal procedure | penal code,0.024720270621909967,0.5523255813953488,4.846089518955081
+benefit of doubt | first information report | life imprisonment | murder,penal code,0.020036429872495445,0.987179487179487,4.820496530153455
+benefit of doubt | medical evidence | murder,penal code,0.020036429872495445,0.987179487179487,4.820496530153455
+evidence act | penal code,first information report,0.026281550871714805,0.6474358974358974,4.812565094479988
+benefit of doubt | first information report | murder,penal code,0.02888368462138954,0.9823008849557523,4.79667382577504
+criminal procedure | evidence act,first information report,0.020817069997397866,0.6451612903225806,4.795657328258564
+benefit of doubt,first information report | penal code,0.04189435336976321,0.5513698630136987,4.7939239447096025
+benefit of doubt | life imprisonment | murder,penal code,0.026801977621649754,0.980952380952381,4.790088945362135
+first information report | medical evidence,criminal procedure | penal code,0.02029664324746292,0.5454545454545455,4.785803237858033
+benefit of doubt | first information report | life imprisonment,penal code,0.024720270621909967,0.9793814432989691,4.782417899107927
+benefit of doubt | eyewitness | murder,penal code,0.023679417122040074,0.978494623655914,4.778087469770874
+benefit of doubt | life imprisonment,penal code,0.03460837887067395,0.9779411764705882,4.7753849316092385
+eyewitness | medical evidence | murder,penal code,0.022118136872235232,0.9770114942528735,4.770845200017526
+benefit of doubt | criminal procedure | life imprisonment,penal code,0.020556856622430394,0.9753086419753088,4.762530001411832
+benefit of doubt | eyewitness | life imprisonment,penal code,0.020036429872495445,0.9746835443037973,4.759477586733791
+life imprisonment | medical evidence,penal code,0.029924538121259434,0.9745762711864406,4.758953761333535
+eyewitness | first information report,criminal procedure | penal code,0.02498048399687744,0.5423728813559322,4.758764801485953
+benefit of doubt | murder,penal code,0.037991152745251104,0.9733333333333333,4.752884371029225
+first information report | life imprisonment,penal code,0.04709862086911267,0.9731182795698925,4.75183424191499
+life imprisonment,first information report,0.04839968774395004,0.6391752577319587,4.7511615386149275
+criminal procedure | medical evidence,penal code,0.026021337496747333,0.970873786407767,4.740874156499427
+first information report | life imprisonment | murder,penal code,0.033307311995836586,0.9696969696969696,4.735127642370336
+first information report,criminal procedure | penal code,0.07259953161592506,0.539651837524178,4.734890437455288
+criminal procedure | penal code,first information report,0.07259953161592506,0.636986301369863,4.734890437455287
+medical evidence | murder,penal code,0.031485818371064275,0.9680000000000001,4.726841168996189
+life imprisonment | medical evidence | murder,penal code,0.022898776997137653,0.967032967032967,4.722119049946242
+first information report | life imprisonment | medical evidence,penal code,0.02263856362217018,0.9666666666666667,4.720330368487929
+benefit of doubt | criminal procedure | murder,penal code,0.022378350247202708,0.9662921348314608,4.718501491940666
+criminal procedure | first information report | life imprisonment,penal code,0.027582617746552174,0.9636363636363636,4.705533094605522
+benefit of doubt | first information report | medical evidence,penal code,0.02029664324746292,0.9629629629629631,4.7022448115205435
+criminal procedure | first information report | medical evidence,penal code,0.02029664324746292,0.9629629629629631,4.7022448115205435
+benefit of doubt | medical evidence,penal code,0.026021337496747333,0.9615384615384616,4.695288828071548
+eyewitness | life imprisonment,penal code,0.032266458495966696,0.9612403100775194,4.693832924558968
+eyewitness | life imprisonment | murder,penal code,0.024720270621909967,0.9595959595959596,4.685803396095645
+eyewitness | first information report | life imprisonment,penal code,0.024460057246942495,0.9591836734693877,4.683790161553821
+first information report | medical evidence | murder,penal code,0.02419984387197502,0.9587628865979382,4.681735417021445
+benefit of doubt | eyewitness | first information report,penal code,0.023939630497007546,0.9583333333333334,4.679637865311309
+life imprisonment | prosecution witness,penal code,0.023939630497007546,0.9583333333333334,4.679637865311309
+first information report | medical evidence,penal code,0.03564923237054385,0.9580419580419581,4.6782150505149245
+eyewitness | medical evidence,penal code,0.029404111371324485,0.9576271186440677,4.676189348092951
+eyewitness | first information report | medical evidence,penal code,0.0234192037470726,0.9574468085106383,4.675308875611669
+eyewitness | prosecution witness,penal code,0.022378350247202708,0.9555555555555556,4.6660736975857695
+first information report | murder | prosecution witness,penal code,0.021597710122300287,0.9540229885057472,4.658590018840644
+first information report | murder,penal code,0.05256310174342961,0.9528301886792452,4.652765457553163
+eyewitness | first information report | murder,penal code,0.030965391621129327,0.9520000000000001,4.648711562897078
+life imprisonment,criminal procedure | penal code,0.04007285974499089,0.5292096219931272,4.643270724473944
+benefit of doubt | prosecution witness,penal code,0.02498048399687744,0.9504950495049506,4.641362738561023
+criminal procedure | eyewitness | first information report,penal code,0.02498048399687744,0.9504950495049506,4.641362738561023
+life imprisonment | murder,penal code,0.04839968774395004,0.9489795918367346,4.633962606643674
+life imprisonment,penal code,0.07181889149102264,0.9484536082474226,4.631394175978203
+criminal procedure | eyewitness,penal code,0.03278688524590164,0.9473684210526316,4.626095097973652
+criminal procedure | first information report | murder,penal code,0.032266458495966696,0.9465648854961833,4.622171353191655
+eyewitness | murder,penal code,0.04007285974499089,0.9447852760736196,4.613481341741958
+first information report | prosecution witness,penal code,0.03538901899557637,0.9444444444444444,4.6118170266836085
+benefit of doubt | eyewitness,penal code,0.030965391621129327,0.9444444444444444,4.6118170266836085
+eyewitness | first information report,penal code,0.04345563361956804,0.9435028248587569,4.607219003725798
+benefit of doubt | criminal procedure | first information report,penal code,0.024720270621909967,0.9405940594059407,4.593015210034346
+criminal procedure | life imprisonment,penal code,0.04007285974499089,0.9390243902439023,4.585350357950847
+criminal procedure | eyewitness | murder,penal code,0.023679417122040074,0.9381443298969073,4.581052934934962
+medical evidence,penal code,0.04709862086911267,0.9378238341968911,4.579487922260041
+criminal procedure | first information report | prosecution witness,penal code,0.023158990372105125,0.9368421052631578,4.574694041329499
+benefit of doubt | first information report,penal code,0.04189435336976321,0.936046511627907,4.570809077745929
+evidence act | first information report,criminal procedure,0.020817069997397866,0.7207207207207207,4.57051110516457
+criminal procedure | life imprisonment | murder,penal code,0.02654176424668228,0.9357798165137615,4.569506778732383
+murder | prosecution witness,penal code,0.02654176424668228,0.9357798165137615,4.569506778732383
+life imprisonment | murder,criminal procedure | penal code,0.02654176424668228,0.5204081632653061,4.566046966731898
+criminal procedure | murder,penal code,0.043195420244600574,0.9325842696629214,4.553902602686922
+medical evidence,criminal procedure | penal code,0.026021337496747333,0.5181347150259067,4.546099794165661
+criminal procedure | prosecution witness,penal code,0.030184751496226906,0.928,4.531517153748412
+eyewitness,criminal procedure | penal code,0.03278688524590164,0.5142857142857142,4.512328767123287
+murder,criminal procedure | penal code,0.043195420244600574,0.5139318885448917,4.509224309767166
+eyewitness,penal code,0.058287795992714025,0.9142857142857141,4.4645489199491735
+evidence act | first information report,penal code,0.026281550871714805,0.9099099099099098,4.443181427933651
+prosecution witness,penal code,0.04553734061930783,0.9020618556701031,4.404858591283617
+murder,penal code,0.07572209211553474,0.9009287925696594,4.399325730425923
+benefit of doubt,first information report,0.044756700494405416,0.589041095890411,4.378500834636073
+criminal procedure | first information report,penal code,0.07259953161592506,0.8885350318471338,4.338805752717326
+benefit of doubt | evidence act,penal code,0.020556856622430394,0.8876404494382023,4.334437417015263
+benefit of doubt | criminal procedure,penal code,0.03382773874577153,0.8843537414965986,4.318388092212743
+circumstantial evidence,penal code,0.02498048399687744,0.8648648648648648,4.223221951303273
+penal code | prosecution witness,criminal procedure,0.030184751496226906,0.6628571428571429,4.203564356435644
+first information report | prosecution witness,criminal procedure,0.024720270621909967,0.6597222222222222,4.18368399339934
+first information report,penal code,0.11501431173562321,0.8549323017408124,4.174720248525975
+penal code,first information report,0.11501431173562321,0.5616264294790343,4.174720248525975
+first information report | penal code | prosecution witness,criminal procedure,0.023158990372105125,0.6544117647058824,4.1500072801397785
+evidence act | penal code,criminal procedure,0.026281550871714805,0.6474358974358974,4.10576923076923
+prosecution witness,criminal procedure,0.032526671870934165,0.6443298969072165,4.0860722670205165
+first information report | penal code,criminal procedure,0.07259953161592506,0.6312217194570136,4.002945656556606
+criminal procedure | evidence act,penal code,0.026281550871714805,0.8145161290322579,3.9773640201664135
+first information report | murder,criminal procedure,0.03408795212073901,0.6179245283018868,3.9186203997758264
+first information report | murder | penal code,criminal procedure,0.032266458495966696,0.613861386138614,3.892853641799824
+benefit of doubt,penal code,0.06036950299245381,0.7945205479452055,3.879723590538024
+first information report,criminal procedure,0.08170699973978662,0.6073500967117988,3.851561751919873
+criminal procedure,first information report,0.08170699973978662,0.5181518151815181,3.851561751919873
+first information report | life imprisonment | murder,criminal procedure,0.020817069997397866,0.606060606060606,3.8433843384338426
+benefit of doubt | life imprisonment,criminal procedure,0.02107728337236534,0.5955882352941176,3.776972917880023
+eyewitness | murder,criminal procedure,0.025240697371844912,0.5950920245398773,3.773826155621697
+benefit of doubt | life imprisonment | penal code,criminal procedure,0.020556856622430394,0.5939849624060151,3.7668056279312143
+benefit of doubt | murder,criminal procedure,0.023158990372105125,0.5933333333333333,3.7626732673267322
+first information report | life imprisonment,criminal procedure,0.028623471246422068,0.5913978494623656,3.750399233471734
+eyewitness | murder | penal code,criminal procedure,0.023679417122040074,0.5909090909090909,3.747299729972997
+benefit of doubt | first information report | penal code,criminal procedure,0.024720270621909967,0.5900621118012422,3.741928540680155
+benefit of doubt | murder | penal code,criminal procedure,0.022378350247202708,0.589041095890411,3.7354536823545366
+benefit of doubt | first information report,criminal procedure,0.026281550871714805,0.5872093023255813,3.723837209302325
+first information report | life imprisonment | penal code,criminal procedure,0.027582617746552174,0.5856353591160222,3.713855915978338
+eyewitness | first information report | penal code,criminal procedure,0.02498048399687744,0.5748502994011976,3.645461552143238
+eyewitness | first information report,criminal procedure,0.026281550871714805,0.5706214689265536,3.61864406779661
+murder | penal code,criminal procedure,0.043195420244600574,0.570446735395189,3.6175359804021636
+first information report | medical evidence | penal code,criminal procedure,0.02029664324746292,0.5693430656934306,3.6105369661053692
+first information report | medical evidence,criminal procedure,0.02107728337236534,0.5664335664335665,3.5920861316900923
+life imprisonment,criminal procedure,0.04267499349466563,0.563573883161512,3.573951209553945
+eyewitness | penal code,criminal procedure,0.03278688524590164,0.5625,3.567141089108911
+benefit of doubt | penal code,criminal procedure,0.03382773874577153,0.5603448275862069,3.553473881870945
+life imprisonment | penal code,criminal procedure,0.04007285974499089,0.5579710144927537,3.5384201463624625
+criminal procedure,penal code,0.11397345823575332,0.7227722772277227,3.5293695824474445
+penal code,criminal procedure,0.11397345823575332,0.5565438373570522,3.5293695824474445
+life imprisonment | murder,criminal procedure,0.028363257871454592,0.5561224489795917,3.526697312588401
+medical evidence | penal code,criminal procedure,0.026021337496747333,0.5524861878453039,3.503637656583338
+murder,criminal procedure,0.04631798074421025,0.5510835913312693,3.4947429727492865
+life imprisonment | murder | penal code,criminal procedure,0.02654176424668228,0.5483870967741936,3.477642925582881
+eyewitness,criminal procedure,0.03460837887067395,0.5428571428571428,3.442574257425742
+medical evidence,criminal procedure,0.026801977621649754,0.533678756476684,3.3843687477556044
+benefit of doubt,criminal procedure,0.03825136612021858,0.5034246575342466,3.192509833175098
+evidence act,penal code,0.04059328649492584,0.5864661654135339,2.863773155888451
+article 14,writ petition,0.04527712724434036,0.7435897435897436,2.21520572450805
+service law,writ petition,0.04553734061930783,0.7261410788381742,2.1632249348644215
+fundamental rights,writ petition,0.055685662243039294,0.7181208053691276,2.1393319806461686
+article 21,writ petition,0.021597710122300287,0.6974789915966386,2.0778385772913817
+disciplinary proceeding,writ petition,0.022378350247202708,0.6771653543307088,2.01732283464567
+natural justice,writ petition,0.04059328649492584,0.6666666666666667,1.9860465116279074
+industrial dispute,writ petition,0.024460057246942495,0.5497076023391814,1.6376172990616078

@@ -1,0 +1,72 @@
+[
+  {
+    "file": "01_case_categories.png",
+    "type": "Bar",
+    "title": "Leading case categories",
+    "basis": "Full CSV (47,400 records).",
+    "inference": "Civil appeal leads with 21,882 records (46.2%). 13,736 case numbers remain unclassified."
+  },
+  {
+    "file": "02_yearly_records.png",
+    "type": "Line",
+    "title": "Records by judgment year",
+    "basis": "Recorded chronology (47,397 rows after date review).",
+    "inference": "The largest annual count is 2,729 in 2008. The final recorded year, 2024, has 132 rows."
+  },
+  {
+    "file": "03_word_histogram.png",
+    "type": "Histogram",
+    "title": "Extracted words per PDF",
+    "basis": "Readable PDFs in the seed-42 sample (3,843 documents).",
+    "inference": "The median is 2,915 words and the 90th percentile is 8,412. 17 sampled PDFs reached the character cap."
+  },
+  {
+    "file": "04_pages_box.png",
+    "type": "Box plot",
+    "title": "PDF pages by case group",
+    "basis": "Readable PDFs in the seed-42 sample (3,843 documents).",
+    "inference": "Median page counts for the displayed groups are Civil appeal 9 (n=1,760), Other/Unknown 7 (n=1,127), Criminal appeal 9 (n=723), Civil writ petition 17 (n=92)."
+  },
+  {
+    "file": "05_words_violin.png",
+    "type": "Violin",
+    "title": "Shape of word-count distributions",
+    "basis": "Readable PDFs in the seed-42 sample (3,843 documents).",
+    "inference": "Civil writ petition has the widest middle half of log-lengths among the displayed groups (IQR 0.63 log10 units)."
+  },
+  {
+    "file": "06_month_heatmap.png",
+    "type": "Heatmap",
+    "title": "Month-by-year judgment counts",
+    "basis": "Recorded chronology (47,397 rows after date review).",
+    "inference": "The highest individual month-year cell is 1999-12 with 642 records."
+  },
+  {
+    "file": "07_pages_and_words.png",
+    "type": "Scatter",
+    "title": "Page count versus extracted words",
+    "basis": "Readable PDFs in the seed-42 sample (3,843 documents).",
+    "inference": "Page count and extracted word count have Spearman rank correlation 0.851."
+  },
+  {
+    "file": "08_cumulative_records.png",
+    "type": "Area",
+    "title": "Cumulative records in the CSV",
+    "basis": "Recorded chronology (47,397 rows after date review).",
+    "inference": "The cumulative total first reached half of the chronology records in 2006."
+  },
+  {
+    "file": "09_petitioner_treemap.png",
+    "type": "Treemap",
+    "title": "Petitioner-name classification",
+    "basis": "Full CSV (47,400 records).",
+    "inference": "The strict name pattern flags 5,139 records (10.8%) and leaves 41,997 present names unclassified."
+  },
+  {
+    "file": "10_missingness_pareto.png",
+    "type": "Pareto",
+    "title": "Concentration of missing metadata",
+    "basis": "Full CSV (47,400 records).",
+    "inference": "language and judgement_by account for 52.1% of the 163,069 missing cells across original fields."
+  }
+]

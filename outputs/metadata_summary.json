@@ -1,0 +1,55 @@
+{
+  "rows": 47400,
+  "columns": 12,
+  "csv_bytes": 8596022,
+  "pdf_files": 48294,
+  "matched_rows": 47388,
+  "matched_unique_files": 47387,
+  "unmatched_rows": 12,
+  "same_link_candidates": 0,
+  "near_name_candidates": 7,
+  "exact_duplicate_rows": 0,
+  "repeats": {
+    "diary_no": {
+      "groups": 2454,
+      "rows": 5328,
+      "extra_rows": 2874,
+      "groups_with_different_files": 2453
+    },
+    "temp_link": {
+      "groups": 94,
+      "rows": 331,
+      "extra_rows": 237,
+      "groups_with_different_files": 93
+    }
+  },
+  "missing": {
+    "diary_no": 935,
+    "Judgement_type": 0,
+    "case_no": 13574,
+    "pet": 264,
+    "res": 744,
+    "pet_adv": 22004,
+    "res_adv": 28184,
+    "bench": 12350,
+    "judgement_by": 38801,
+    "judgment_dates": 0,
+    "temp_link": 0,
+    "language": 46213
+  },
+  "zero_placeholders": {
+    "diary_no": 935,
+    "case_no": 12459
+  },
+  "raw_diary_repeat_occurrences": 3808,
+  "raw_types": {
+    "J": 47180,
+    "judgment": 220
+  },
+  "unparsed_dates": 0,
+  "pre_1950": 3,
+  "earliest_raw_year": 1902,
+  "latest_raw_year": 2024,
+  "reliable_bench_sizes": 6683,
+  "explicit_government_names": 5139
+}
